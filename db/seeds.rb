@@ -1,7 +1,1 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Loan.create(first_payment_date: Date.today, term: 30, loan_type:"fixed", starting_loan_amount:100000.00, starting_second_loan_amount: 30000, property_value: 200000, fico1: 721, fico2: 733, escrow: true, occupancy:"Owner Occupied", property_type:"SFD", deal_type:"purchase", zip_code:53072, starting_rate: 0.04375)

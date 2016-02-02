@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202014250) do
+ActiveRecord::Schema.define(version: 20160202032044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20160202014250) do
     t.date     "first_payment_date"
     t.integer  "term"
     t.string   "loan_type"
-    t.decimal  "loan_amount",        precision: 10, scale: 2
-    t.decimal  "second_loan_amount", precision: 10, scale: 2
-    t.decimal  "property_value",     precision: 10, scale: 2
+    t.decimal  "starting_loan_amount",        precision: 10, scale: 2
+    t.decimal  "starting_second_loan_amount", precision: 10, scale: 2
+    t.decimal  "property_value",              precision: 10, scale: 2
     t.integer  "fico1"
     t.integer  "fico2"
     t.boolean  "escrow"
@@ -46,8 +46,9 @@ ActiveRecord::Schema.define(version: 20160202014250) do
     t.string   "property_type"
     t.string   "deal_type"
     t.integer  "zip_code"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.decimal  "starting_rate",               precision: 6,  scale: 5
   end
 
 end
