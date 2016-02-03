@@ -23,7 +23,6 @@ class Loan < ActiveRecord::Base
   end
 
   def remaining_loan_amount(inspect_on_date: Date.today)
-    # formula http://www.financeformulas.net/Remaining_Balance_Formula.html
     future_value_of_original_balance = ((self.starting_loan_amount * (1 + monthly_starting_rate)**payments_made(inspect_on_date: inspect_on_date))) # working... left of the - sign
     future_value_of_annuity  = (monthly_payment / monthly_starting_rate) * (((1 + monthly_starting_rate)**payments_made(inspect_on_date: inspect_on_date)) - 1)
 
